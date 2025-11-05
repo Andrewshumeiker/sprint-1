@@ -163,7 +163,35 @@ Authorization: Bearer <token>
 GET /tasks?limit=5&page=1
 Authorization: Bearer <token>
 
- GitFlow utilizado
+🧩 Ejemplo de flujo de uso
+# Registro de usuario
+POST /auth/register
+{
+  "email": "user@example.com",
+  "password": "123456"
+}
+
+# Login
+POST /auth/login
+{
+  "email": "user@example.com",
+  "password": "123456"
+}
+# => devuelve token JWT
+
+# Crear tarea
+POST /tasks
+Authorization: Bearer <token>
+{
+  "title": "Primera tarea",
+  "description": "Descripción opcional"
+}
+
+# Listar tareas
+GET /tasks?limit=5&page=1
+Authorization: Bearer <token>
+
+🧭 GitFlow utilizado
 Rama	Propósito
 main	Producción
 develop	Integración de funcionalidades
@@ -177,7 +205,8 @@ git checkout -b feature/auth-jwt
 git add .
 git commit -m "feat(auth): implementar registro y login con JWT"
 git push origin feature/auth-jwt
- Scripts disponibles
+
+🧪 Scripts disponibles
 Comando	Descripción
 npm run start	Inicia la aplicación compilada
 npm run start:dev	Inicia modo desarrollo (watch)
@@ -186,18 +215,18 @@ npm run lint	Corre linter de código
 npm run test	Ejecuta pruebas unitarias
 npm run test:e2e	Ejecuta pruebas end-to-end
 docker compose up --build	Levanta la infraestructura completa
- Estructura Docker
+🧱 Estructura Docker
 Servicio	Imagen	Puerto	Descripción
 nestjs	node:20-alpine	5000 → 3000	API NestJS
 database	postgres:16-alpine	5433 → 5432	Base de datos PostgreSQL
 nginx (opcional)	nginx:1.25-alpine	80/443	Proxy inverso para producción
- Troubleshooting
+🧰 Troubleshooting
 Error	Causa	Solución
 failed to bind host port 5432	Puerto ocupado	Cambiar a 5433:5432 en docker-compose.yml
 secretOrKey: undefined	Falta JWT_SECRET	Añadir JWT_SECRET en .env
 Nest can't resolve dependencies	Orden incorrecto de módulos	Revisa importaciones en app.module.ts
 Cannot connect to Docker daemon	Docker no iniciado	sudo systemctl start docker
- Próximas mejoras
+🏗️ Próximas mejoras
 
 Middleware para logging y métricas.
 
@@ -209,9 +238,11 @@ Swagger con ejemplos dinámicos.
 
 Seeders para data inicial.
 
- Equipo
-Andres covaleda
+👨‍💻 Equipo
+Rol	Nombre
+Backend	Tú
+QA / DevOps	(pendiente)
 Mentor / Revisión	(pendiente)
- Licencia
+📄 Licencia
 
 Este proyecto es de uso académico y libre bajo licencia MIT.
