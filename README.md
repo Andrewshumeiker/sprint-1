@@ -1,10 +1,10 @@
-# 🚀 Proyecto Sprint 1 — API REST con NestJS + PostgreSQL + Docker
+#  Proyecto Sprint 1 — API REST con NestJS + PostgreSQL + Docker
 
 > Backend desarrollado con **NestJS**, **TypeScript**, **PostgreSQL** y **Docker**, siguiendo arquitectura modular, autenticación JWT y buenas prácticas de CI/CD.
 
 ---
 
-## 🧩 Descripción general
+##  Descripción general
 
 Este proyecto es una **API REST** para la gestión de tareas (To-Do App), desarrollada como parte del **Sprint 1**.  
 Permite a los usuarios:
@@ -16,7 +16,7 @@ Permite a los usuarios:
 
 ---
 
-## 🧱 Tecnologías principales
+##  Tecnologías principales
 
 | Componente | Tecnología | Descripción |
 |-------------|-------------|-------------|
@@ -30,7 +30,7 @@ Permite a los usuarios:
 
 ---
 
-## 🧮 Arquitectura del proyecto
+##  Arquitectura del proyecto
 
 ```bash
 src/
@@ -63,7 +63,7 @@ src/
 
 ---
 
-## ⚙️ Requisitos previos
+## Requisitos previos
 
 Asegúrate de tener instalados:
 
@@ -74,9 +74,9 @@ Asegúrate de tener instalados:
 
 ---
 
-## 🐳 Levantar entorno con Docker
+##  Levantar entorno con Docker
 
-### 1️⃣ Variables de entorno
+### 1 Variables de entorno
 Crea el archivo `docker/.env` (usado por Docker Compose):
 
 ```env
@@ -89,7 +89,7 @@ JWT_SECRET=supersecret123
 JWT_EXPIRATION=1d
 ```
 
-### 2️⃣ Levantar servicios
+### 2 Levantar servicios
 Ejecuta desde la carpeta raíz del proyecto:
 
 ```bash
@@ -101,13 +101,13 @@ Esto crea tres contenedores:
 - `taskmanager_nestjs` → API NestJS
 - (opcional) `taskmanager_nginx` → Proxy Nginx si se configuró
 
-### 3️⃣ Comprobar estado
+### 3 Comprobar estado
 ```bash
 docker compose ps
 docker compose logs -f nestjs
 ```
 
-### 4️⃣ Acceso a la API
+### 4 Acceso a la API
 Abre en el navegador:
 ```
 http://localhost:5000/api
@@ -116,7 +116,7 @@ http://localhost:5000/api
 
 ---
 
-## ⚙️ Variables de entorno para NestJS (`config/env/.env`)
+##  Variables de entorno para NestJS (`config/env/.env`)
 
 ```env
 PORT=3000
@@ -132,15 +132,15 @@ NODE_ENV=development
 
 ---
 
-## 🧠 Endpoints principales
+##  Endpoints principales
 
-### 🔐 Autenticación
+###  Autenticación
 | Método | Endpoint | Descripción |
 |---------|-----------|-------------|
 | `POST` | `/auth/register` | Registra un nuevo usuario |
 | `POST` | `/auth/login` | Inicia sesión y devuelve JWT |
 
-### 🧾 Tareas (protegido con JWT)
+###  Tareas (protegido con JWT)
 | Método | Endpoint | Descripción |
 |---------|-----------|-------------|
 | `POST` | `/tasks` | Crea una nueva tarea |
@@ -151,7 +151,7 @@ NODE_ENV=development
 
 ---
 
-## 🧩 Ejemplo de flujo de uso
+##  Ejemplo de flujo de uso
 
 ```bash
 # Registro de usuario
@@ -184,7 +184,7 @@ Authorization: Bearer <token>
 
 ---
 
-## 🧭 GitFlow utilizado
+##  GitFlow utilizado
 
 | Rama | Propósito |
 |-------|------------|
@@ -204,7 +204,7 @@ git push origin feature/auth-jwt
 
 ---
 
-## 🧪 Scripts disponibles
+##  Scripts disponibles
 
 | Comando | Descripción |
 |----------|--------------|
@@ -218,7 +218,7 @@ git push origin feature/auth-jwt
 
 ---
 
-## 🧱 Estructura Docker
+##  Estructura Docker
 
 | Servicio | Imagen | Puerto | Descripción |
 |-----------|---------|--------|-------------|
@@ -228,7 +228,7 @@ git push origin feature/auth-jwt
 
 ---
 
-## 🧰 Troubleshooting
+##  Troubleshooting
 
 | Error | Causa | Solución |
 |-------|--------|----------|
@@ -239,7 +239,7 @@ git push origin feature/auth-jwt
 
 ---
 
-## 🏗️ Próximas mejoras
+##  Próximas mejoras
 
 - Middleware para logging y métricas.
 - CI/CD con GitHub Actions.
@@ -249,7 +249,7 @@ git push origin feature/auth-jwt
 
 ---
 
-## 👨‍💻 Equipo
+##  Equipo
 
 | Rol | Nombre |
 |------|---------|
@@ -259,10 +259,7 @@ git push origin feature/auth-jwt
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto es de uso académico y libre bajo licencia MIT.
 
----
-
-**Desarrollado con ❤️ usando NestJS, PostgreSQL y Docker.**
